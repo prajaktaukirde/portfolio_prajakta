@@ -81,7 +81,36 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
-    name: "sFET",
+    name: "CortexAI",
+    tag: "Multi-Agent AI Platform · MERN + LangGraph",
+    accent: "primary",
+    when: "Apr 2026 — Jul 2026",
+    stack: ["MERN", "LangGraph", "LangChain", "Qdrant", "Docker", "AWS", "Redis", "Firebase Auth"],
+    desc:
+      "MERN-based microservices AI platform with 6+ microservices on Docker + AWS + API Gateway. Orchestrates 8+ AI agents via LangGraph, LangChain, RAG and Qdrant Vector DB for chat, code-gen, web search, vision, PDF and PPT generation. Integrated AWS S3, Razorpay and Monaco Editor for secure payments, artifact storage, live code editing and credit-based AI usage.",
+    stats: [
+      { k: "6+", v: "microservices" },
+      { k: "8+", v: "AI agents" },
+      { k: "RAG", v: "+ Qdrant" },
+    ],
+    link: "https://github.com/prajaktaukirde/cortex-ai",
+  },
+  {
+    name: "Booking Platform REST API",
+    tag: "NestJS · PostgreSQL · Production API",
+    accent: "mint",
+    when: "Jun 2026 — Jul 2026",
+    stack: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Docker", "Swagger", "Jest"],
+    desc:
+      "Production-ready REST API with NestJS, PostgreSQL, TypeORM, JWT and Refresh Tokens exposing 10+ secure endpoints. Enforces 8+ booking business rules — duplicate prevention, status transitions, validation, pagination and exception handling. Configured Swagger, Docker, migrations and Jest for docs, containerised deployment and automated testing.",
+    stats: [
+      { k: "10+", v: "endpoints" },
+      { k: "8+", v: "business rules" },
+      { k: "JWT", v: "+ refresh" },
+    ],
+    link: "https://github.com/prajaktaukirde/Booking-Platform-RESTAPI",
+  },
+  {
     tag: "Fuzzy Evolutionary Transformer · Agri Advisory",
     accent: "peach",
     when: "2025",
