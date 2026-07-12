@@ -473,18 +473,45 @@ function Hero() {
         <motion.div
           ref={magnet.ref}
           style={{ x: magnet.x, y: magnet.y }}
-          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden min-h-[280px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
+          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden min-h-[320px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
           data-cursor
         >
           <div className="absolute -bottom-16 -right-16 size-64 rounded-full border-[1.5px] border-primary-foreground/40 animate-spin-slow" />
           <div className="absolute -bottom-24 -right-24 size-80 rounded-full border-[1.5px] border-primary-foreground/20 animate-spin-slow" style={{ animationDirection: "reverse" }} />
-          <div className="flex justify-between items-start">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 rounded-full bg-primary-foreground/10 blur-2xl -z-0" />
+
+          <div className="flex justify-between items-start relative z-10">
             <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">The engineer</span>
             <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">'27</span>
           </div>
+
+          {/* Big monogram + name stack */}
+          <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center py-6">
+            <motion.div
+              initial={{ scale: 0.6, opacity: 0, rotate: -8 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display italic font-black text-[28vw] md:text-[11vw] leading-[0.75] drop-shadow-[3px_3px_0_rgba(0,0,0,0.15)]"
+            >
+              P<span className="text-primary-foreground/60">U</span>
+            </motion.div>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.7 }}
+              className="mt-3 font-display italic text-2xl md:text-3xl leading-tight"
+            >
+              Prajakta<br/>
+              <span className="not-italic font-black tracking-tight">Ukirde</span>
+            </motion.div>
+            <div className="mt-3 inline-flex items-center gap-1.5 bg-primary-foreground/15 border border-primary-foreground/40 rounded-full px-3 py-1 font-mono-tech text-[9px] md:text-[10px] uppercase tracking-widest">
+              <span className="size-1.5 rounded-full bg-primary-foreground animate-pulse-glow" />
+              AI · Full-Stack · Cloud
+            </div>
+          </div>
+
           <div className="relative z-10">
-            <div className="font-display italic font-black text-[38vw] md:text-[14vw] leading-[0.75]">P</div>
-            <div className="font-mono-tech text-[10px] uppercase mt-3 opacity-80">
+            <div className="font-mono-tech text-[10px] uppercase opacity-80">
               Aurangabad · Maharashtra
             </div>
             <div className="font-mono-tech text-[10px] uppercase mt-1 opacity-80">
@@ -492,6 +519,8 @@ function Hero() {
             </div>
           </div>
         </motion.div>
+
+
 
         {/* stat cards */}
         <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
