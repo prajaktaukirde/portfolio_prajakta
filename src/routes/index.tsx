@@ -9,32 +9,57 @@ export const Route = createFileRoute("/")({
 /* ---------- data ---------- */
 
 const ROLES = [
-  "AI / ML Engineer",
-  "Full-Stack Developer",
+  "Full Stack Developer",
+  "MERN Stack Developer",
+  "AI / LLM Engineer",
   "Cloud & Data Enthusiast",
   "Cybersecurity Minor",
   "Gen-AI Explorer",
 ];
 
 const SKILLS = {
-  Languages: ["Python", "Java", "JavaScript", "C++", "SQL"],
-  "Frontend / Web": ["React.js", "HTML5", "CSS3", "Bootstrap", "Vite", "Streamlit"],
-  "Backend / DB": ["Node.js", "Express.js", "MongoDB", "MySQL"],
-  "AI / ML / GenAI": [
+  Languages: ["Java", "C++", "JavaScript", "TypeScript", "Python", "SQL"],
+  "Frontend / Web": ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design", "Vite", "Streamlit"],
+  "Backend / APIs": [
+    "Node.js",
+    "Express.js",
+    "NestJS",
+    "REST APIs",
+    "Microservices",
+    "JWT & OAuth",
+    "WebSockets",
+  ],
+  "AI / LLMs / GenAI": [
+    "LangChain",
+    "LangGraph",
+    "RAG",
+    "Prompt Eng.",
+    "Vector DBs",
+    "Transformers",
     "TensorFlow",
     "Scikit-learn",
     "Fuzzy Logic",
-    "Transformers",
-    "RAG",
-    "LangChain",
     "Gemini API",
     "Vertex AI",
-    "Prompt Eng.",
     "MLOps",
     "Responsible AI",
   ],
-  "Cloud / DevOps": ["Google Cloud", "Oracle Cloud", "AWS", "Docker", "Git", "GitHub", "Vercel", "Netlify"],
-  "Data / Analytics": ["Power BI", "Tableau", "Snowflake", "Pandas", "NumPy"],
+  Databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Qdrant"],
+  "Cloud / DevOps": [
+    "AWS (S3, EC2)",
+    "Google Cloud",
+    "Oracle Cloud",
+    "Docker",
+    "Docker Compose",
+    "CI/CD",
+    "Git",
+    "GitHub",
+    "Firebase",
+    "Vercel",
+    "Render",
+    "Netlify",
+  ],
+  "Practices / Data": ["Agile", "Jest Unit Testing", "System Design", "DSA", "OOP", "DBMS", "Power BI", "Tableau", "Snowflake", "Pandas", "NumPy"],
 };
 
 const EXPERIENCE = [
@@ -45,23 +70,23 @@ const EXPERIENCE = [
     when: "Jun 2026 — Oct 2026",
     color: "lemon",
     bullets: [
+      "Mentored and communicated technical concepts to 500+ students in MERN Stack and DSA, resolving 300+ debugging queries.",
       "Solved 10–14 student doubts daily on the MERN stack via text solutions, debugging sessions and voice calls.",
       "Debugged full-stack JavaScript, React, Node.js, Express and MongoDB code while explaining concepts clearly.",
-      "Maintained high availability during assigned time slots and cleared weekly backlogs to keep resolution rates on target.",
-      "Earned consistent positive student ratings that directly fed into performance reviews and skill improvement.",
+      "Lifted student project completion rates by 30% through consistent availability, cleared backlogs and high-rated support.",
     ],
   },
   {
     company: "TrueVows App",
     role: "Full Stack Developer",
-    where: "Remote",
-    when: "Nov 2025 — Apr 2026",
+    where: "Dublin, Ireland · Remote",
+    when: "Nov 2025 — May 2026",
     color: "peach",
     bullets: [
-      "Built a scalable frontend with Next.js (App Router), TypeScript, Tailwind CSS & shadcn/ui — accessible, maintainable, modern patterns.",
-      "Shipped core public pages — Home, About, Contact & Blog — optimised for performance, responsiveness & SEO.",
-      "Streamlined collaboration through Git & GitHub — code reviews, feature rollouts and PR-based delivery.",
-      "Deployed production builds on Vercel & Netlify — 40% faster load times and stronger SEO scores.",
+      "Shipped 15+ full-stack features using Next.js, React, TypeScript, Node.js, Express.js and MongoDB — responsive UI plus 20+ secure REST API endpoints with JWT authentication.",
+      "Localized 29+ components into 3 languages (English, Spanish, French) using react-i18next, expanding the addressable user base by 25%.",
+      "Reduced average API response time by 35% by profiling and optimizing authentication, messaging and membership modules across 40+ peer-reviewed Git pull requests.",
+      "Deployed production builds on Vercel & Netlify — 40% faster load times and stronger SEO scores with accessible, maintainable UI patterns (Tailwind CSS & shadcn/ui).",
     ],
   },
   {
@@ -71,9 +96,9 @@ const EXPERIENCE = [
     when: "Sep 2025 — Oct 2025",
     color: "sky",
     bullets: [
-      "Completed a Google Cloud Generative AI Virtual Internship — hands-on with Vertex AI, LLMs, Prompt Engineering, RAG and AI app development.",
-      "Worked with Google Cloud services — Vertex AI, Cloud Storage, Cloud Run, IAM and BigQuery — for cloud deployment and AI model integration.",
-      "Built and iterated on scalable Gen-AI application architecture, connecting foundation models to grounded data sources.",
+      "Built 3+ Generative AI applications on Google Cloud Vertex AI, applying LLMs, Prompt Engineering and RAG to improve response relevance by 40%.",
+      "Deployed 5+ AI-integrated cloud services using Vertex AI, Cloud Run, Cloud Storage, IAM and BigQuery, reducing deployment time by 30% through containerization.",
+      "Developed a RAG pipeline over 1,000+ documents with vector embeddings, raising answer accuracy by 35% and lowering LLM hallucination on domain queries.",
       "Explored Responsible AI, evaluation and monitoring workflows for production-grade generative applications.",
     ],
   },
@@ -84,14 +109,14 @@ const PROJECTS = [
     name: "CortexAI",
     tag: "Multi-Agent AI Platform · MERN + LangGraph",
     accent: "primary",
-    when: "Apr 2026 — Jul 2026",
+    when: "Apr 2026 — Present",
     stack: ["MERN", "LangGraph", "LangChain", "Qdrant", "Docker", "AWS", "Redis", "Firebase Auth"],
     desc:
-      "MERN-based microservices AI platform with 6+ microservices on Docker + AWS + API Gateway. Orchestrates 8+ AI agents via LangGraph, LangChain, RAG and Qdrant Vector DB for chat, code-gen, web search, vision, PDF and PPT generation. Integrated AWS S3, Razorpay and Monaco Editor for secure payments, artifact storage, live code editing and credit-based AI usage.",
+      "MERN microservices AI platform — 6+ microservices on Docker, AWS, API Gateway, MongoDB, Redis & Firebase Auth supporting 1,000+ concurrent users at 99.9% uptime. Orchestrates 8+ AI agents via LangGraph, LangChain, RAG and Qdrant Vector DB across 6 workflows (chat, code-gen, web search, vision, PDF & PPT generation), boosting retrieval accuracy by 45%. Integrated AWS S3, Razorpay and Monaco Editor for secure payments, artifact storage, live code editing and a credit-based AI usage system.",
     stats: [
-      { k: "6+", v: "microservices" },
+      { k: "1K+", v: "concurrent users" },
       { k: "8+", v: "AI agents" },
-      { k: "RAG", v: "+ Qdrant" },
+      { k: "99.9%", v: "uptime" },
     ],
     link: "https://github.com/prajaktaukirde/cortex-ai",
   },
@@ -99,18 +124,19 @@ const PROJECTS = [
     name: "Booking Platform REST API",
     tag: "NestJS · PostgreSQL · Production API",
     accent: "mint",
-    when: "Jun 2026 — Jul 2026",
+    when: "Jun 2026 — Present",
     stack: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Docker", "Swagger", "Jest"],
     desc:
-      "Production-ready REST API with NestJS, PostgreSQL, TypeORM, JWT and Refresh Tokens exposing 10+ secure endpoints. Enforces 8+ booking business rules — duplicate prevention, status transitions, validation, pagination and exception handling. Configured Swagger, Docker, migrations and Jest for docs, containerised deployment and automated testing.",
+      "Production-ready REST API with NestJS, PostgreSQL, TypeORM, JWT and refresh-token rotation — 10+ secure, role-based endpoints handling 500+ requests/day. Cut invalid bookings by 60% by enforcing 8+ business rules across duplicate prevention, status transitions, input validation, pagination and centralized exception handling. Automated testing & deployment with Swagger, Docker, migrations and Jest — 85%+ test coverage and 50% faster setup.",
     stats: [
-      { k: "10+", v: "endpoints" },
-      { k: "8+", v: "business rules" },
-      { k: "JWT", v: "+ refresh" },
+      { k: "-60%", v: "invalid bookings" },
+      { k: "85%+", v: "test coverage" },
+      { k: "500+", v: "requests/day" },
     ],
     link: "https://github.com/prajaktaukirde/Booking-Platform-RESTAPI",
   },
   {
+    name: "AgriNLP · sFET",
     tag: "Fuzzy Evolutionary Transformer · Agri Advisory",
     accent: "peach",
     when: "2025",
@@ -176,8 +202,8 @@ const EDUCATION = [
     icon: "🎓",
     title: "B.Tech · Computer Science & Engineering",
     where: "M.G.M's Jawaharlal Nehru College of Engineering",
-    when: "2023 — Present",
-    tag: "Minor in Cybersecurity",
+    when: "Jul 2023 — Jul 2027",
+    tag: "CGPA 8.61 · Cybersecurity Minor",
     color: "bg-peach",
   },
   {
@@ -224,18 +250,40 @@ const CERTS = [
     ],
   },
   {
+    org: "Apna College",
+    items: [
+      "DSA with C++",
+      "Sigma 9.0 — Full Stack Web Dev",
+    ],
+  },
+  {
     org: "Cisco · Infosys",
     items: [
+      "Cisco Networking Academy",
       "Intro to Cyber Security — Cisco",
       "Programming Using Java — Infosys",
     ],
   },
 ];
 
+const ACHIEVEMENTS = [
+  {
+    icon: "🏆",
+    title: "Top 10 Performer · GDSC",
+    desc: "Ranked in the top 10 among 200+ members of the Google Developer Student Club for technical contributions and delivering 5+ community-led projects.",
+  },
+  {
+    icon: "🧑‍🏫",
+    title: "MERN Stack Teaching Assistant · Apna College",
+    desc: "Mentored 500+ students in MERN Stack and DSA, resolved 300+ debugging queries and lifted project completion rates by 30%.",
+  },
+];
+
 const MARQUEE = [
-  "Python", "Java", "React.js", "Node.js", "TensorFlow", "LangChain",
-  "Gemini API", "Vertex AI", "RAG", "Fuzzy Logic", "Transformers",
-  "AWS", "Oracle Cloud", "Snowflake", "Power BI", "Tableau", "Docker",
+  "TypeScript", "React.js", "Next.js", "Node.js", "NestJS", "MongoDB",
+  "PostgreSQL", "Redis", "LangChain", "LangGraph", "RAG", "Qdrant",
+  "Vertex AI", "Gemini API", "Transformers", "AWS", "Docker", "CI/CD",
+  "Python", "Java", "Power BI", "Snowflake",
 ];
 
 /* ---------- utilities ---------- */
@@ -433,7 +481,8 @@ function Hero() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="mt-6 max-w-xl text-base md:text-lg leading-relaxed"
           >
-            CSE '27 student with a{" "}
+            Full Stack (<span className="bg-peach px-1.5 rounded-md">MERN</span>) developer & AI/LLM
+            engineer — CSE '27 (CGPA 8.61) with a{" "}
             <span className="bg-sky px-1.5 rounded-md">Cybersecurity</span> minor, building{" "}
             <span className="italic font-display">intelligent</span>, animated web experiences —
             from <span className="bg-lemon px-1.5 rounded-md">multi-agent AI</span> to{" "}
@@ -462,7 +511,7 @@ function Hero() {
             <div className="inline-block marquee-track font-mono-tech text-[11px] tracking-tight uppercase">
               {Array(2).fill(0).map((_, i) => (
                 <span key={i}>
-                  {["ai / ml engineer · ", "full-stack developer · ", "cs @ jnec '27 · ", "aurangabad, india · ", "open to work · "].join("").repeat(2)}
+                  {["full stack developer · ", "mern stack · ", "ai / llm engineer · ", "cs @ jnec '27 · ", "cgpa 8.61 · ", "aurangabad, india · ", "open to work · "].join("").repeat(2)}
                 </span>
               ))}
             </div>
@@ -524,23 +573,22 @@ function Hero() {
 
         {/* stat cards */}
         <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
-          <span className="font-mono-tech text-[10px] uppercase">Accuracy</span>
-          <div className="font-display font-black text-5xl md:text-6xl leading-none">91%+</div>
-          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">sFET model</span>
+          <span className="font-mono-tech text-[10px] uppercase">Features shipped</span>
+          <div className="font-display font-black text-5xl md:text-6xl leading-none">15<span className="text-primary">+</span></div>
+          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">full-stack @ TrueVows</span>
         </div>
 
         <div className="col-span-6 md:col-span-2 bg-sky sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
           <span className="font-mono-tech text-[10px] uppercase">Certs</span>
-          <div className="font-display font-black text-5xl md:text-6xl leading-none">12<span className="text-primary">+</span></div>
-          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">Oracle · Google · Snowflake</span>
+          <div className="font-display font-black text-5xl md:text-6xl leading-none">14<span className="text-primary">+</span></div>
+          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">Oracle · Google · Cisco</span>
         </div>
 
         <div className="col-span-12 md:col-span-4 bg-card sticker rounded-4xl p-5 flex flex-col justify-between">
           <span className="font-mono-tech text-[10px] uppercase mb-2">Currently</span>
           <p className="font-display italic text-xl md:text-2xl leading-tight">
-            Designing AI-driven advisory systems that fuse{" "}
-            <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">fuzzy logic</span>,
-            evolution & transformers.
+            Building <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">CortexAI</span> —
+            8+ LangGraph agents, 6+ microservices, 1K+ concurrent users at 99.9% uptime.
           </p>
         </div>
 
@@ -785,6 +833,26 @@ function Certs() {
                   </li>
                 ))}
               </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* achievements */}
+        <div className="grid md:grid-cols-2 gap-4 mt-6">
+          {ACHIEVEMENTS.map((a, i) => (
+            <motion.div
+              key={a.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="border-[1.5px] border-cream/30 rounded-3xl p-6 flex gap-4 items-start hover:bg-cream hover:text-ink transition-colors"
+            >
+              <span className="text-4xl shrink-0">{a.icon}</span>
+              <div>
+                <div className="font-display font-black text-xl md:text-2xl leading-tight mb-1">{a.title}</div>
+                <p className="text-sm leading-relaxed opacity-80">{a.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
