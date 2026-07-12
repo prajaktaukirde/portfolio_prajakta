@@ -1,3 +1,4 @@
+# Prettier ignores
 node_modules
 dist
 .output
