@@ -8,83 +8,191 @@ export const Route = createFileRoute("/")({
 
 /* ---------- data ---------- */
 
+const ROLES = [
+  "AI / ML Engineer",
+  "Full-Stack Developer",
+  "Cloud & Data Enthusiast",
+  "Cybersecurity Minor",
+  "Gen-AI Explorer",
+];
+
 const SKILLS = {
-  Languages: ["Java", "C++", "JavaScript", "TypeScript", "Python", "SQL"],
-  Frontend: ["React.js", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "Bootstrap"],
-  Backend: ["Node.js", "Express.js", "NestJS", "REST APIs", "JWT", "Microservices"],
-  "AI / LLMs": ["LangChain", "LangGraph", "RAG", "Vertex AI", "Prompt Eng.", "Vector DBs"],
-  Databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Qdrant"],
-  "Cloud / DevOps": ["AWS S3", "Docker", "Firebase", "Vercel", "Git", "Render"],
+  Languages: ["Python", "Java", "JavaScript", "C++", "SQL"],
+  "Frontend / Web": ["React.js", "HTML5", "CSS3", "Bootstrap", "Vite", "Streamlit"],
+  "Backend / DB": ["Node.js", "Express.js", "MongoDB", "MySQL"],
+  "AI / ML / GenAI": [
+    "TensorFlow",
+    "Scikit-learn",
+    "Fuzzy Logic",
+    "Transformers",
+    "RAG",
+    "LangChain",
+    "Gemini API",
+    "Vertex AI",
+    "Prompt Eng.",
+    "MLOps",
+    "Responsible AI",
+  ],
+  "Cloud / DevOps": ["Google Cloud", "Oracle Cloud", "AWS", "Docker", "Git", "GitHub", "Vercel", "Netlify"],
+  "Data / Analytics": ["Power BI", "Tableau", "Snowflake", "Pandas", "NumPy"],
 };
 
 const EXPERIENCE = [
   {
     company: "TrueVows App",
     role: "Full Stack Developer",
-    where: "Dublin, Ireland · Remote",
-    when: "Nov 2025 — May 2026",
+    where: "Remote",
+    when: "Nov 2025 — Apr 2026",
     color: "peach",
     bullets: [
-      "Shipped full-stack features with Next.js, TypeScript, Node.js, Express & MongoDB — responsive UI, REST APIs, auth.",
-      "Localised 29+ files across English, Spanish & French with react-i18next.",
-      "Improved authentication, messaging, profile & membership modules through GitHub PR flow.",
+      "Built a scalable frontend with Next.js (App Router), TypeScript, Tailwind CSS & shadcn/ui — accessible, maintainable, modern patterns.",
+      "Shipped core public pages — Home, About, Contact & Blog — optimised for performance, responsiveness & SEO.",
+      "Streamlined collaboration through Git & GitHub — code reviews, feature rollouts and PR-based delivery.",
+      "Deployed production builds on Vercel & Netlify — 40% faster load times and stronger SEO scores.",
     ],
   },
   {
-    company: "SmartBridge",
-    role: "Google Cloud Gen-AI Virtual Intern",
+    company: "Forage Job Simulations",
+    role: "Virtual Intern",
     where: "Remote",
-    when: "Sep 2025 — Oct 2025",
+    when: "2024 — 2025",
     color: "mint",
     bullets: [
-      "Hands-on with Vertex AI, LLMs, prompt engineering, RAG & AI app development.",
-      "Worked across Cloud Storage, Cloud Run, IAM & BigQuery for scalable deployment.",
+      "Deloitte — Data Analytics simulation: cleaned, analysed & visualised business data.",
+      "AWS — Solutions Architecture simulation: designed a scalable cloud architecture.",
+      "Hashgraph — Developer Program: hands-on with distributed-ledger app development.",
     ],
   },
 ];
 
 const PROJECTS = [
   {
-    name: "CortexAI",
-    tag: "Multi-Agent AI Platform",
+    name: "sFET",
+    tag: "Fuzzy Evolutionary Transformer · Agri Advisory",
     accent: "peach",
-    when: "Apr — Jul 2026",
-    stack: ["MERN", "LangGraph", "LangChain", "Docker", "AWS"],
-    desc: "MERN microservices platform with 6+ services and 8+ orchestrated AI agents for chat, code-gen, web search, vision, PDF & PPT generation. Wired to AWS S3, Razorpay & Monaco Editor with credit-based usage.",
+    when: "2025",
+    stack: ["React", "Python", "Transformers", "Fuzzy Logic", "RAG", "Vercel"],
+    desc:
+      "Multilingual (English–Marathi) web app for smart agri advisory. Integrates fuzzy logic + evolutionary algorithms + transformers with a RAG knowledge base of 20+ ICAR/FAO guidelines. Voice & image input, analytics dashboard, explainable AI.",
     stats: [
-      { k: "6+", v: "microservices" },
-      { k: "8+", v: "AI agents" },
-      { k: "RAG", v: "Qdrant DB" },
+      { k: "91%+", v: "accuracy" },
+      { k: "+22%", v: "clarity" },
+      { k: "-80%", v: "cost" },
     ],
-    link: "https://github.com/prajaktaukirde/cortex-ai",
+    link: "https://github.com/prajaktaukirde/AgriNLP",
   },
   {
-    name: "Booking Platform REST API",
-    tag: "NestJS · PostgreSQL · Docker",
+    name: "100 Apps, One Agent",
+    tag: "API Buildability · Case Study",
     accent: "mint",
-    when: "Jun — Jul 2026",
-    stack: ["NestJS", "TypeORM", "JWT", "Swagger", "Jest"],
-    desc: "Production-ready REST API — 10+ secure endpoints, JWT + refresh tokens, 8+ booking business rules, dockerised deployment, Swagger docs & automated Jest tests.",
+    when: "2026",
+    stack: ["React", "TanStack Start", "Tailwind v4", "Python", "Gemini"],
+    desc:
+      "Automated research pipeline auditing 100 SaaS APIs for AI-agent buildability. Fan-out research agents extract schemas + evidence; adversarial judge loop verifies claims. Served as an interactive matrix + live runner.",
     stats: [
-      { k: "10+", v: "endpoints" },
-      { k: "8+", v: "biz rules" },
-      { k: "100%", v: "typed" },
+      { k: "100", v: "apps" },
+      { k: "10", v: "agents" },
+      { k: "100%", v: "verified" },
     ],
-    link: "https://booking-platform-restapi.onrender.com/api/docs/",
+    link: "https://github.com/prajaktaukirde/app-discover-guild",
+  },
+  {
+    name: "AI Detection Hub",
+    tag: "Flask · scikit-learn · 3-in-1 ML",
+    accent: "sky",
+    when: "2025",
+    stack: ["Python", "Flask", "scikit-learn", "TF-IDF", "Random Forest"],
+    desc:
+      "A Flask app with three ML detection systems — Email Spam, Fake News & Phishing URLs — powered by Logistic Regression + TF-IDF and a Random Forest URL classifier.",
+    stats: [
+      { k: "97%", v: "spam acc." },
+      { k: "98.6%", v: "news acc." },
+      { k: "96%", v: "url acc." },
+    ],
+    link: "https://github.com/prajaktaukirde/AI-Detection",
+  },
+  {
+    name: "Weather Dashboard",
+    tag: "Power BI · Data Storytelling",
+    accent: "lavender",
+    when: "2024",
+    stack: ["Power BI", "DAX", "Data Modeling"],
+    desc:
+      "Interactive weather dashboard visualising real-time and historical data. DAX measures surface trends in temperature and rainfall — designed for clarity and user-friendly storytelling.",
+    stats: [
+      { k: "DAX", v: "measures" },
+      { k: "Realtime", v: "data" },
+      { k: "UX-first", v: "visuals" },
+    ],
+    link: "https://github.com/prajaktaukirde/Weather-Dashboard",
+  },
+];
+
+const EDUCATION = [
+  {
+    icon: "🎓",
+    title: "B.Tech · Computer Science & Engineering",
+    where: "M.G.M's Jawaharlal Nehru College of Engineering",
+    when: "2023 — Present",
+    tag: "Minor in Cybersecurity",
+    color: "bg-peach",
+  },
+  {
+    icon: "📚",
+    title: "Higher Secondary (HSC)",
+    where: "Vidhyadam Junior College",
+    when: "2022",
+    tag: "Completed",
+    color: "bg-mint",
+  },
+  {
+    icon: "📖",
+    title: "Secondary School (SSC)",
+    where: "St. Lawrence High School",
+    when: "2020",
+    tag: "Completed",
+    color: "bg-sky",
   },
 ];
 
 const CERTS = [
-  { org: "Oracle Cloud", items: ["Generative AI Professional", "AI Foundations Associate", "DevOps Professional", "Data Science Professional"] },
-  { org: "Google Cloud", items: ["Generative AI Learning Path", "Google Data Analytics"] },
-  { org: "Apna College", items: ["DSA with C++", "Sigma 9.0 — Full Stack Web Dev"] },
-  { org: "Cisco", items: ["Networking Academy"] },
+  {
+    org: "Oracle Cloud",
+    items: [
+      "Generative AI Professional",
+      "DevOps Professional",
+      "Data Science Professional",
+      "AI Foundations Associate",
+    ],
+  },
+  {
+    org: "Google Cloud",
+    items: [
+      "Gen AI Learning Path",
+      "Gen AI Apps · Gemini & Streamlit",
+      "Google Data Analytics",
+    ],
+  },
+  {
+    org: "Snowflake · Hashgraph",
+    items: [
+      "SnowPro Associate — Platform",
+      "Hashgraph Developer Program",
+    ],
+  },
+  {
+    org: "Cisco · Infosys",
+    items: [
+      "Intro to Cyber Security — Cisco",
+      "Programming Using Java — Infosys",
+    ],
+  },
 ];
 
 const MARQUEE = [
-  "React.js", "Next.js", "TypeScript", "Node.js", "NestJS", "MongoDB",
-  "PostgreSQL", "LangChain", "LangGraph", "Vertex AI", "RAG", "Docker",
-  "AWS S3", "Redis", "Qdrant", "Tailwind CSS",
+  "Python", "Java", "React.js", "Node.js", "TensorFlow", "LangChain",
+  "Gemini API", "Vertex AI", "RAG", "Fuzzy Logic", "Transformers",
+  "AWS", "Oracle Cloud", "Snowflake", "Power BI", "Tableau", "Docker",
 ];
 
 /* ---------- utilities ---------- */
@@ -124,6 +232,30 @@ function useMagnetic(strength = 25) {
   return { ref, x: sx, y: sy };
 }
 
+function useTypewriter(words: string[], speed = 80, pause = 1400) {
+  const [text, setText] = useState("");
+  const [i, setI] = useState(0);
+  const [del, setDel] = useState(false);
+
+  useEffect(() => {
+    const word = words[i % words.length];
+    const t = setTimeout(() => {
+      if (!del) {
+        const next = word.slice(0, text.length + 1);
+        setText(next);
+        if (next === word) setTimeout(() => setDel(true), pause);
+      } else {
+        const next = word.slice(0, text.length - 1);
+        setText(next);
+        if (next === "") { setDel(false); setI(i + 1); }
+      }
+    }, del ? speed / 2 : speed);
+    return () => clearTimeout(t);
+  }, [text, del, i, words, speed, pause]);
+
+  return text;
+}
+
 /* ---------- component pieces ---------- */
 
 function Cursor() {
@@ -161,11 +293,11 @@ function Nav() {
       transition={{ delay: 0.4, ease: [0.16, 1, 0.3, 1], duration: 0.9 }}
       className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 bg-card/80 backdrop-blur-md sticker rounded-full px-2 py-1.5"
     >
-      {["work", "skills", "about", "contact"].map((s) => (
+      {["work", "skills", "education", "about", "contact"].map((s) => (
         <a
           key={s}
           href={`#${s}`}
-          className="text-[11px] font-mono-tech uppercase tracking-wider px-3 py-1.5 rounded-full hover:bg-ink hover:text-cream transition-colors"
+          className="text-[11px] font-mono-tech uppercase tracking-wider px-3 py-1.5 rounded-full hover:bg-ink hover:text-cream transition-colors hidden sm:inline-block"
         >
           {s}
         </a>
@@ -206,27 +338,32 @@ function Hero() {
 
   const magnet = useMagnetic(30);
   const reveal = { initial: { y: "110%" }, whileInView: { y: 0 }, viewport: { once: true } };
+  const typed = useTypewriter(ROLES);
 
   return (
-    <section ref={heroRef} className="relative pt-28 pb-16 px-4 md:px-8 grain-bg">
+    <section ref={heroRef} className="relative pt-24 pb-16 px-4 md:px-8 grain-bg overflow-hidden">
       {/* blob background */}
       <div className="absolute top-20 -left-20 size-[420px] bg-peach animate-blob animate-pulse-glow opacity-70 -z-10" />
       <div className="absolute -top-10 right-0 size-[320px] bg-mint animate-blob animate-pulse-glow opacity-70 -z-10" style={{ animationDelay: "2s" }} />
       <div className="absolute bottom-0 left-1/3 size-[260px] bg-lavender animate-blob animate-pulse-glow opacity-60 -z-10" style={{ animationDelay: "4s" }} />
 
-      <motion.div style={{ y, opacity }} className="max-w-7xl mx-auto grid grid-cols-12 gap-4 md:gap-5">
+      <motion.div style={{ y, opacity }} className="max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-5">
         {/* NAME */}
-        <div className="col-span-12 md:col-span-8 bg-card sticker rounded-4xl p-8 md:p-12 relative overflow-hidden">
-          <div className="flex justify-between items-start mb-8">
-            <span className="font-mono-tech text-[11px] uppercase tracking-widest text-muted-foreground">
+        <div className="col-span-12 md:col-span-8 bg-card sticker rounded-4xl p-6 md:p-12 relative overflow-hidden">
+          <div className="flex justify-between items-start mb-6 gap-2 flex-wrap">
+            <span className="font-mono-tech text-[10px] md:text-[11px] uppercase tracking-widest text-muted-foreground">
               (portfolio · vol_01) — 2026
             </span>
-            <span className="flex items-center gap-2 text-[11px] font-mono-tech uppercase">
+            <span className="flex items-center gap-2 text-[10px] md:text-[11px] font-mono-tech uppercase">
               <span className="size-2 bg-primary rounded-full animate-pulse-glow" /> Available
             </span>
           </div>
 
-          <h1 className="font-display font-black leading-[0.82] tracking-tighter text-[16vw] md:text-[10vw]">
+          <p className="font-mono-tech text-[11px] md:text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            hi there, i'm
+          </p>
+
+          <h1 className="font-display font-black leading-[0.82] tracking-tighter text-[15vw] md:text-[9.5vw]">
             <span className="block overflow-hidden">
               <motion.span {...reveal} transition={{ delay: 0.2, duration: 0.9, ease: [0.16, 1, 0.3, 1] }} className="block">
                 Prajakta
@@ -239,25 +376,50 @@ function Hero() {
             </span>
           </h1>
 
+          <div className="mt-6 flex items-center gap-2 flex-wrap">
+            <span className="font-mono-tech text-[10px] uppercase tracking-widest">i'm into →</span>
+            <span className="font-display italic text-2xl md:text-3xl bg-lemon px-3 py-0.5 rounded-lg border-[1.5px] border-ink">
+              {typed}
+              <span className="inline-block w-[2px] h-6 bg-ink align-middle ml-0.5 animate-pulse" />
+            </span>
+          </div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-8 max-w-xl text-lg md:text-xl leading-relaxed"
+            className="mt-6 max-w-xl text-base md:text-lg leading-relaxed"
           >
-            Full-stack developer & Gen-AI engineer. I build{" "}
-            <span className="italic font-display">intelligent</span>, animated,
-            production-ready web things — from{" "}
-            <span className="bg-lemon px-1.5 rounded-md">multi-agent AI</span> to{" "}
-            <span className="bg-sky px-1.5 rounded-md">i18n-first</span> product surfaces.
+            CSE '27 student with a{" "}
+            <span className="bg-sky px-1.5 rounded-md">Cybersecurity</span> minor, building{" "}
+            <span className="italic font-display">intelligent</span>, animated web experiences —
+            from <span className="bg-lemon px-1.5 rounded-md">multi-agent AI</span> to{" "}
+            <span className="bg-mint px-1.5 rounded-md">cloud-scale</span> data systems.
           </motion.p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <a
+              href="#work"
+              data-cursor
+              className="bg-ink text-cream sticker rounded-full px-5 py-2.5 font-mono-tech text-[11px] uppercase tracking-wider hover:bg-primary transition-colors"
+            >
+              See my work →
+            </a>
+            <a
+              href="mailto:prajaktaukirde576@gmail.com"
+              data-cursor
+              className="bg-card sticker rounded-full px-5 py-2.5 font-mono-tech text-[11px] uppercase tracking-wider hover:bg-lemon transition-colors"
+            >
+              ✉ Say hi
+            </a>
+          </div>
 
           {/* inner marquee */}
           <div className="absolute bottom-0 left-0 w-full overflow-hidden whitespace-nowrap border-t-[1.5px] border-ink py-2 bg-mint">
             <div className="inline-block marquee-track font-mono-tech text-[11px] tracking-tight uppercase">
               {Array(2).fill(0).map((_, i) => (
                 <span key={i}>
-                  {["shipping full-stack + ai · ", "based in maharashtra · ", "cs @ jnec · ", "cgpa 8.61 · ", "open to work · "].join("").repeat(2)}
+                  {["ai / ml engineer · ", "full-stack developer · ", "cs @ jnec '27 · ", "aurangabad, india · ", "open to work · "].join("").repeat(2)}
                 </span>
               ))}
             </div>
@@ -268,35 +430,45 @@ function Hero() {
         <motion.div
           ref={magnet.ref}
           style={{ x: magnet.x, y: magnet.y }}
-          className="col-span-6 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden aspect-square md:aspect-auto flex flex-col justify-between text-primary-foreground"
+          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden min-h-[280px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
           data-cursor
         >
           <div className="absolute -bottom-16 -right-16 size-64 rounded-full border-[1.5px] border-primary-foreground/40 animate-spin-slow" />
           <div className="absolute -bottom-24 -right-24 size-80 rounded-full border-[1.5px] border-primary-foreground/20 animate-spin-slow" style={{ animationDirection: "reverse" }} />
-          <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">The engineer</span>
+          <div className="flex justify-between items-start">
+            <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">The engineer</span>
+            <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">'27</span>
+          </div>
           <div className="relative z-10">
-            <div className="font-display italic text-[26vw] md:text-[14vw] leading-[0.75]">P</div>
-            <div className="font-mono-tech text-[10px] uppercase mt-2 opacity-80">unique · animated · crafted</div>
+            <div className="font-display italic font-black text-[38vw] md:text-[14vw] leading-[0.75]">P</div>
+            <div className="font-mono-tech text-[10px] uppercase mt-3 opacity-80">
+              Aurangabad · Maharashtra
+            </div>
+            <div className="font-mono-tech text-[10px] uppercase mt-1 opacity-80">
+              CS + Cybersecurity Minor
+            </div>
           </div>
         </motion.div>
 
         {/* stat cards */}
-        <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-5 flex flex-col justify-between">
-          <span className="font-mono-tech text-[10px] uppercase">CGPA</span>
-          <div className="font-display font-black text-6xl leading-none">8.61</div>
-          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">B.Tech CSE · 2027</span>
+        <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
+          <span className="font-mono-tech text-[10px] uppercase">Accuracy</span>
+          <div className="font-display font-black text-5xl md:text-6xl leading-none">91%+</div>
+          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">sFET model</span>
         </div>
 
-        <div className="col-span-6 md:col-span-2 bg-sky sticker rounded-4xl p-5 flex flex-col justify-between">
-          <span className="font-mono-tech text-[10px] uppercase">Mentored</span>
-          <div className="font-display font-black text-6xl leading-none">500<span className="text-primary">+</span></div>
-          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">Apna College TA</span>
+        <div className="col-span-6 md:col-span-2 bg-sky sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
+          <span className="font-mono-tech text-[10px] uppercase">Certs</span>
+          <div className="font-display font-black text-5xl md:text-6xl leading-none">12<span className="text-primary">+</span></div>
+          <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">Oracle · Google · Snowflake</span>
         </div>
 
         <div className="col-span-12 md:col-span-4 bg-card sticker rounded-4xl p-5 flex flex-col justify-between">
           <span className="font-mono-tech text-[10px] uppercase mb-2">Currently</span>
-          <p className="font-display italic text-2xl leading-tight">
-            Architecting multi-agent AI systems with LangGraph &amp; a stack that <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">ships</span>.
+          <p className="font-display italic text-xl md:text-2xl leading-tight">
+            Designing AI-driven advisory systems that fuse{" "}
+            <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">fuzzy logic</span>,
+            evolution & transformers.
           </p>
         </div>
 
@@ -305,7 +477,7 @@ function Hero() {
           className="col-span-12 md:col-span-4 bg-ink text-cream sticker rounded-4xl p-5 flex items-center justify-between group hover:bg-primary hover:text-primary-foreground transition-colors"
           data-cursor
         >
-          <span className="font-display italic text-3xl md:text-4xl">See the work</span>
+          <span className="font-display italic text-2xl md:text-4xl">See the work</span>
           <span className="size-12 rounded-full bg-primary text-primary-foreground grid place-items-center text-2xl group-hover:bg-cream group-hover:text-ink transition-all group-hover:rotate-45">↓</span>
         </a>
       </motion.div>
@@ -431,13 +603,49 @@ function Skills() {
   );
 }
 
+/* ---------- EDUCATION ---------- */
+
+function EducationSection() {
+  return (
+    <section id="education" className="py-24 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <SectionHead num="03" title="Education" tag="Learning path" />
+        <p className="font-display italic text-xl md:text-2xl text-muted-foreground mt-6 max-w-2xl">
+          "Education is not the learning of facts, but the training of the mind to think."
+        </p>
+        <div className="grid md:grid-cols-3 gap-5 mt-10">
+          {EDUCATION.map((e, i) => (
+            <motion.div
+              key={e.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.7 }}
+              whileHover={{ y: -6, rotate: i % 2 ? 1 : -1 }}
+              className={`${e.color} sticker sticker-hover rounded-4xl p-7 flex flex-col`}
+            >
+              <div className="text-5xl mb-4">{e.icon}</div>
+              <h3 className="font-display font-black text-2xl leading-tight">{e.title}</h3>
+              <p className="text-sm mt-2 text-muted-foreground">{e.where}</p>
+              <div className="flex gap-2 mt-5 flex-wrap">
+                <span className="bg-card border-[1.5px] border-ink px-3 py-1 rounded-full font-mono-tech text-[10px] uppercase">{e.when}</span>
+                <span className="bg-ink text-cream px-3 py-1 rounded-full font-mono-tech text-[10px] uppercase">{e.tag}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- EXPERIENCE ---------- */
 
 function Experience() {
   return (
-    <section id="about" className="py-24 px-4 md:px-8">
+    <section id="about" className="py-24 px-4 md:px-8 grain-bg">
       <div className="max-w-7xl mx-auto">
-        <SectionHead num="03" title="Trajectory" tag="Experience" />
+        <SectionHead num="04" title="Trajectory" tag="Experience" />
         <div className="mt-12 grid gap-6">
           {EXPERIENCE.map((e, i) => (
             <motion.div
@@ -474,37 +682,6 @@ function Experience() {
             </motion.div>
           ))}
         </div>
-
-        {/* Education + Achievements */}
-        <div className="grid md:grid-cols-2 gap-5 mt-6">
-          <div className="bg-lavender sticker rounded-4xl p-7">
-            <span className="font-mono-tech text-[10px] uppercase tracking-widest">Education</span>
-            <h3 className="font-display font-black text-3xl mt-2 leading-tight">
-              M.G.M's Jawaharlal Nehru<br />College of Engineering
-            </h3>
-            <p className="mt-3 text-sm text-muted-foreground">
-              B.Tech · Computer Science Engineering · Minor in Cybersecurity
-            </p>
-            <div className="flex gap-2 mt-4">
-              <span className="bg-card border-[1.5px] border-ink px-3 py-1 rounded-full font-mono-tech text-xs">2023 — 2027</span>
-              <span className="bg-ink text-cream px-3 py-1 rounded-full font-mono-tech text-xs">CGPA 8.61</span>
-            </div>
-          </div>
-
-          <div className="bg-lemon sticker rounded-4xl p-7">
-            <span className="font-mono-tech text-[10px] uppercase tracking-widest">Achievements</span>
-            <ul className="mt-3 space-y-3">
-              <li className="flex gap-3">
-                <span className="text-primary font-black">★</span>
-                <p className="text-sm"><b>MERN Teaching Assistant, Apna College</b> — mentored 500+ students in MERN & DSA.</p>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-primary font-black">★</span>
-                <p className="text-sm"><b>Top 10 Performer, GDSC</b> — outstanding technical contributions & community impact.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -516,7 +693,7 @@ function Certs() {
   return (
     <section className="py-24 px-4 md:px-8 bg-ink text-cream relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <SectionHead num="04" title="Certified &amp; curious" tag="Certifications" invert />
+        <SectionHead num="05" title="Certified &amp; curious" tag="Certifications" invert />
         <div className="grid md:grid-cols-4 gap-4 mt-12">
           {CERTS.map((c, i) => (
             <motion.div
@@ -581,7 +758,7 @@ function Contact() {
           transition={{ delay: 0.3, duration: 0.6 }}
           whileHover={{ scale: 1.04 }}
           data-cursor
-          className="inline-block mt-10 bg-ink text-cream sticker sticker-hover rounded-full px-10 py-5 font-mono-tech uppercase tracking-widest text-sm"
+          className="inline-block mt-10 bg-ink text-cream sticker sticker-hover rounded-full px-8 md:px-10 py-5 font-mono-tech uppercase tracking-widest text-xs md:text-sm break-all"
         >
           prajaktaukirde576@gmail.com →
         </motion.a>
@@ -594,10 +771,10 @@ function Contact() {
             <a href="https://github.com/prajaktaukirde" target="_blank" rel="noreferrer">GitHub ↗</a>
           </Sticker>
           <Sticker rotate={-2} className="bg-sky rounded-full px-6 py-3 text-xs">
-            <a href="tel:9112480174">+91 91124 80174</a>
+            <a href="tel:+919112480174">+91 91124 80174</a>
           </Sticker>
           <Sticker rotate={5} className="bg-lemon rounded-full px-6 py-3 text-xs" float={false}>
-            Available 2026
+            Aurangabad, India
           </Sticker>
         </div>
       </div>
@@ -646,6 +823,7 @@ function Portfolio() {
       <MarqueeStrip />
       <Work />
       <Skills />
+      <EducationSection />
       <Experience />
       <Certs />
       <Contact />
