@@ -39,6 +39,19 @@ const SKILLS = {
 
 const EXPERIENCE = [
   {
+    company: "Apna College",
+    role: "Teaching Assistant (MERN Stack)",
+    where: "Remote · Work from Home",
+    when: "Jun 2026 — Oct 2026",
+    color: "lemon",
+    bullets: [
+      "Solved 10–14 student doubts daily on the MERN stack via text solutions, debugging sessions and voice calls.",
+      "Debugged full-stack JavaScript, React, Node.js, Express and MongoDB code while explaining concepts clearly.",
+      "Maintained high availability during assigned time slots and cleared weekly backlogs to keep resolution rates on target.",
+      "Earned consistent positive student ratings that directly fed into performance reviews and skill improvement.",
+    ],
+  },
+  {
     company: "TrueVows App",
     role: "Full Stack Developer",
     where: "Remote",
@@ -52,16 +65,16 @@ const EXPERIENCE = [
     ],
   },
   {
-    company: "Apna College",
-    role: "Teaching Assistant (MERN Stack)",
-    where: "Remote · Work from Home",
-    when: "Jun 2026 — Oct 2026",
-    color: "lemon",
+    company: "SmartBridge",
+    role: "Google Cloud Generative AI Virtual Intern",
+    where: "Remote",
+    when: "Sep 2025 — Oct 2025",
+    color: "sky",
     bullets: [
-      "Solved 10–14 student doubts daily on the MERN stack via text solutions, debugging sessions and voice calls.",
-      "Debugged full-stack JavaScript, React, Node.js, Express and MongoDB code while explaining concepts clearly.",
-      "Maintained high availability during assigned time slots and cleared weekly backlogs to keep resolution rates on target.",
-      "Earned consistent positive student ratings that directly fed into performance reviews and skill improvement.",
+      "Completed a Google Cloud Generative AI Virtual Internship — hands-on with Vertex AI, LLMs, Prompt Engineering, RAG and AI app development.",
+      "Worked with Google Cloud services — Vertex AI, Cloud Storage, Cloud Run, IAM and BigQuery — for cloud deployment and AI model integration.",
+      "Built and iterated on scalable Gen-AI application architecture, connecting foundation models to grounded data sources.",
+      "Explored Responsible AI, evaluation and monitoring workflows for production-grade generative applications.",
     ],
   },
 ];
