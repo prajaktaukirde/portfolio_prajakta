@@ -39,6 +39,19 @@ const SKILLS = {
 
 const EXPERIENCE = [
   {
+    company: "Apna College",
+    role: "Teaching Assistant (MERN Stack)",
+    where: "Remote · Work from Home",
+    when: "Jun 2026 — Oct 2026",
+    color: "lemon",
+    bullets: [
+      "Solved 10–14 student doubts daily on the MERN stack via text solutions, debugging sessions and voice calls.",
+      "Debugged full-stack JavaScript, React, Node.js, Express and MongoDB code while explaining concepts clearly.",
+      "Maintained high availability during assigned time slots and cleared weekly backlogs to keep resolution rates on target.",
+      "Earned consistent positive student ratings that directly fed into performance reviews and skill improvement.",
+    ],
+  },
+  {
     company: "TrueVows App",
     role: "Full Stack Developer",
     where: "Remote",
@@ -52,23 +65,52 @@ const EXPERIENCE = [
     ],
   },
   {
-    company: "Apna College",
-    role: "Teaching Assistant (MERN Stack)",
-    where: "Remote · Work from Home",
-    when: "Jun 2026 — Oct 2026",
-    color: "lemon",
+    company: "SmartBridge",
+    role: "Google Cloud Generative AI Virtual Intern",
+    where: "Remote",
+    when: "Sep 2025 — Oct 2025",
+    color: "sky",
     bullets: [
-      "Solved 10–14 student doubts daily on the MERN stack via text solutions, debugging sessions and voice calls.",
-      "Debugged full-stack JavaScript, React, Node.js, Express and MongoDB code while explaining concepts clearly.",
-      "Maintained high availability during assigned time slots and cleared weekly backlogs to keep resolution rates on target.",
-      "Earned consistent positive student ratings that directly fed into performance reviews and skill improvement.",
+      "Completed a Google Cloud Generative AI Virtual Internship — hands-on with Vertex AI, LLMs, Prompt Engineering, RAG and AI app development.",
+      "Worked with Google Cloud services — Vertex AI, Cloud Storage, Cloud Run, IAM and BigQuery — for cloud deployment and AI model integration.",
+      "Built and iterated on scalable Gen-AI application architecture, connecting foundation models to grounded data sources.",
+      "Explored Responsible AI, evaluation and monitoring workflows for production-grade generative applications.",
     ],
   },
 ];
 
 const PROJECTS = [
   {
-    name: "sFET",
+    name: "CortexAI",
+    tag: "Multi-Agent AI Platform · MERN + LangGraph",
+    accent: "primary",
+    when: "Apr 2026 — Jul 2026",
+    stack: ["MERN", "LangGraph", "LangChain", "Qdrant", "Docker", "AWS", "Redis", "Firebase Auth"],
+    desc:
+      "MERN-based microservices AI platform with 6+ microservices on Docker + AWS + API Gateway. Orchestrates 8+ AI agents via LangGraph, LangChain, RAG and Qdrant Vector DB for chat, code-gen, web search, vision, PDF and PPT generation. Integrated AWS S3, Razorpay and Monaco Editor for secure payments, artifact storage, live code editing and credit-based AI usage.",
+    stats: [
+      { k: "6+", v: "microservices" },
+      { k: "8+", v: "AI agents" },
+      { k: "RAG", v: "+ Qdrant" },
+    ],
+    link: "https://github.com/prajaktaukirde/cortex-ai",
+  },
+  {
+    name: "Booking Platform REST API",
+    tag: "NestJS · PostgreSQL · Production API",
+    accent: "mint",
+    when: "Jun 2026 — Jul 2026",
+    stack: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Docker", "Swagger", "Jest"],
+    desc:
+      "Production-ready REST API with NestJS, PostgreSQL, TypeORM, JWT and Refresh Tokens exposing 10+ secure endpoints. Enforces 8+ booking business rules — duplicate prevention, status transitions, validation, pagination and exception handling. Configured Swagger, Docker, migrations and Jest for docs, containerised deployment and automated testing.",
+    stats: [
+      { k: "10+", v: "endpoints" },
+      { k: "8+", v: "business rules" },
+      { k: "JWT", v: "+ refresh" },
+    ],
+    link: "https://github.com/prajaktaukirde/Booking-Platform-RESTAPI",
+  },
+  {
     tag: "Fuzzy Evolutionary Transformer · Agri Advisory",
     accent: "peach",
     when: "2025",
@@ -431,18 +473,45 @@ function Hero() {
         <motion.div
           ref={magnet.ref}
           style={{ x: magnet.x, y: magnet.y }}
-          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden min-h-[280px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
+          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden min-h-[320px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
           data-cursor
         >
           <div className="absolute -bottom-16 -right-16 size-64 rounded-full border-[1.5px] border-primary-foreground/40 animate-spin-slow" />
           <div className="absolute -bottom-24 -right-24 size-80 rounded-full border-[1.5px] border-primary-foreground/20 animate-spin-slow" style={{ animationDirection: "reverse" }} />
-          <div className="flex justify-between items-start">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 rounded-full bg-primary-foreground/10 blur-2xl -z-0" />
+
+          <div className="flex justify-between items-start relative z-10">
             <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">The engineer</span>
             <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">'27</span>
           </div>
+
+          {/* Big monogram + name stack */}
+          <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center py-6">
+            <motion.div
+              initial={{ scale: 0.6, opacity: 0, rotate: -8 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display italic font-black text-[28vw] md:text-[11vw] leading-[0.75] drop-shadow-[3px_3px_0_rgba(0,0,0,0.15)]"
+            >
+              P<span className="text-primary-foreground/60">U</span>
+            </motion.div>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.7 }}
+              className="mt-3 font-display italic text-2xl md:text-3xl leading-tight"
+            >
+              Prajakta<br/>
+              <span className="not-italic font-black tracking-tight">Ukirde</span>
+            </motion.div>
+            <div className="mt-3 inline-flex items-center gap-1.5 bg-primary-foreground/15 border border-primary-foreground/40 rounded-full px-3 py-1 font-mono-tech text-[9px] md:text-[10px] uppercase tracking-widest">
+              <span className="size-1.5 rounded-full bg-primary-foreground animate-pulse-glow" />
+              AI · Full-Stack · Cloud
+            </div>
+          </div>
+
           <div className="relative z-10">
-            <div className="font-display italic font-black text-[38vw] md:text-[14vw] leading-[0.75]">P</div>
-            <div className="font-mono-tech text-[10px] uppercase mt-3 opacity-80">
+            <div className="font-mono-tech text-[10px] uppercase opacity-80">
               Aurangabad · Maharashtra
             </div>
             <div className="font-mono-tech text-[10px] uppercase mt-1 opacity-80">
@@ -450,6 +519,8 @@ function Hero() {
             </div>
           </div>
         </motion.div>
+
+
 
         {/* stat cards */}
         <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
