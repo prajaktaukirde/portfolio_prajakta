@@ -428,11 +428,11 @@ function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const magnet = useMagnetic(30);
-  const reveal = { initial: { y: "110%" }, whileInView: { y: 0 }, viewport: { once: true } };
+  const reveal = { initial: { y: "110%" }, animate: { y: 0 } };
   const typed = useTypewriter(ROLES);
 
   return (
-    <section ref={heroRef} className="relative pt-24 pb-16 px-4 md:px-8 grain-bg overflow-hidden">
+    <section ref={heroRef} className="relative pt-20 pb-12 px-4 md:px-8 grain-bg overflow-hidden">
       {/* blob background */}
       <div className="absolute top-20 -left-20 size-[420px] bg-peach animate-blob animate-pulse-glow opacity-70 -z-10" />
       <div className="absolute -top-10 right-0 size-[320px] bg-mint animate-blob animate-pulse-glow opacity-70 -z-10" style={{ animationDelay: "2s" }} />
@@ -440,8 +440,8 @@ function Hero() {
 
       <motion.div style={{ y, opacity }} className="max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-5">
         {/* NAME */}
-        <div className="col-span-12 md:col-span-8 bg-card sticker rounded-4xl p-6 md:p-12 relative overflow-hidden">
-          <div className="flex justify-between items-start mb-6 gap-2 flex-wrap">
+        <div className="col-span-12 md:col-span-8 bg-card sticker rounded-4xl p-5 md:p-8 pb-16 md:pb-20 relative overflow-hidden">
+          <div className="flex justify-between items-start mb-4 gap-2 flex-wrap">
             <span className="font-mono-tech text-[10px] md:text-[11px] uppercase tracking-widest text-muted-foreground">
               (portfolio · vol_01) — 2026
             </span>
@@ -450,11 +450,11 @@ function Hero() {
             </span>
           </div>
 
-          <p className="font-mono-tech text-[11px] md:text-xs uppercase tracking-widest text-muted-foreground mb-2">
+          <p className="font-mono-tech text-[11px] md:text-xs uppercase tracking-widest text-muted-foreground mb-1">
             hi there, i'm
           </p>
 
-          <h1 className="font-display font-black leading-[0.82] tracking-tighter text-[15vw] md:text-[9.5vw]">
+          <h1 className="font-display font-black leading-[0.82] tracking-tighter text-[12vw] md:text-[7.2vw]">
             <span className="block overflow-hidden">
               <motion.span {...reveal} transition={{ delay: 0.2, duration: 0.9, ease: [0.16, 1, 0.3, 1] }} className="block">
                 Prajakta
@@ -467,11 +467,11 @@ function Hero() {
             </span>
           </h1>
 
-          <div className="mt-6 flex items-center gap-2 flex-wrap">
+          <div className="mt-4 flex items-center gap-2 flex-wrap">
             <span className="font-mono-tech text-[10px] uppercase tracking-widest">i'm into →</span>
-            <span className="font-display italic text-2xl md:text-3xl bg-lemon px-3 py-0.5 rounded-lg border-[1.5px] border-ink">
+            <span className="font-display italic text-xl md:text-2xl bg-lemon px-2.5 py-0.5 rounded-lg border-[1.5px] border-ink">
               {typed}
-              <span className="inline-block w-[2px] h-6 bg-ink align-middle ml-0.5 animate-pulse" />
+              <span className="inline-block w-[2px] h-5 bg-ink align-middle ml-0.5 animate-pulse" />
             </span>
           </div>
 
@@ -479,35 +479,35 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="mt-6 max-w-xl text-base md:text-lg leading-relaxed"
+            className="mt-4 max-w-xl text-[14px] md:text-[16px] leading-relaxed text-muted-foreground"
           >
-            Full Stack (<span className="bg-peach px-1.5 rounded-md">MERN</span>) developer & AI/LLM
+            Full Stack (<span className="bg-peach px-1.5 rounded-md text-ink font-semibold">MERN</span>) developer & AI/LLM
             engineer — CSE '27 (CGPA 8.61) with a{" "}
-            <span className="bg-sky px-1.5 rounded-md">Cybersecurity</span> minor, building{" "}
-            <span className="italic font-display">intelligent</span>, animated web experiences —
-            from <span className="bg-lemon px-1.5 rounded-md">multi-agent AI</span> to{" "}
-            <span className="bg-mint px-1.5 rounded-md">cloud-scale</span> data systems.
+            <span className="bg-sky px-1.5 rounded-md text-ink font-semibold">Cybersecurity</span> minor, building{" "}
+            <span className="italic font-display text-ink font-bold">intelligent</span>, animated web experiences —
+            from <span className="bg-lemon px-1.5 rounded-md text-ink font-semibold">multi-agent AI</span> to{" "}
+            <span className="bg-mint px-1.5 rounded-md text-ink font-semibold">cloud-scale</span> data systems.
           </motion.p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             <a
               href="#work"
               data-cursor
-              className="bg-ink text-cream sticker rounded-full px-5 py-2.5 font-mono-tech text-[11px] uppercase tracking-wider hover:bg-primary transition-colors"
+              className="bg-ink text-cream sticker rounded-full px-4 py-2 font-mono-tech text-[10px] md:text-[11px] uppercase tracking-wider hover:bg-primary transition-colors"
             >
               See my work →
             </a>
             <a
               href="mailto:prajaktaukirde576@gmail.com"
               data-cursor
-              className="bg-card sticker rounded-full px-5 py-2.5 font-mono-tech text-[11px] uppercase tracking-wider hover:bg-lemon transition-colors"
+              className="bg-card sticker rounded-full px-4 py-2 font-mono-tech text-[10px] md:text-[11px] uppercase tracking-wider hover:bg-lemon transition-colors"
             >
               ✉ Say hi
             </a>
           </div>
 
           {/* inner marquee */}
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden whitespace-nowrap border-t-[1.5px] border-ink py-2 bg-mint">
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden whitespace-nowrap border-t-[1.5px] border-ink py-2.5 bg-mint">
             <div className="inline-block marquee-track font-mono-tech text-[11px] tracking-tight uppercase">
               {Array(2).fill(0).map((_, i) => (
                 <span key={i}>
@@ -522,7 +522,7 @@ function Hero() {
         <motion.div
           ref={magnet.ref}
           style={{ x: magnet.x, y: magnet.y }}
-          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-6 relative overflow-hidden min-h-[320px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
+          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-5 md:p-8 relative overflow-hidden min-h-[260px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
           data-cursor
         >
           <div className="absolute -bottom-16 -right-16 size-64 rounded-full border-[1.5px] border-primary-foreground/40 animate-spin-slow" />
@@ -535,12 +535,12 @@ function Hero() {
           </div>
 
           {/* Big monogram + name stack */}
-          <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center py-6">
+          <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center py-4">
             <motion.div
               initial={{ scale: 0.6, opacity: 0, rotate: -8 }}
               animate={{ scale: 1, opacity: 1, rotate: 0 }}
               transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display italic font-black text-[28vw] md:text-[11vw] leading-[0.75] drop-shadow-[3px_3px_0_rgba(0,0,0,0.15)]"
+              className="font-display italic font-black text-[22vw] md:text-[8vw] leading-[0.75] drop-shadow-[3px_3px_0_rgba(0,0,0,0.15)]"
             >
               P<span className="text-primary-foreground/60">U</span>
             </motion.div>
@@ -548,12 +548,12 @@ function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.7 }}
-              className="mt-3 font-display italic text-2xl md:text-3xl leading-tight"
+              className="mt-2 font-display italic text-xl md:text-2xl leading-tight"
             >
-              Prajakta<br/>
-              <span className="not-italic font-black tracking-tight">Ukirde</span>
+              Build &<br/>
+              <span className="not-italic font-black tracking-tight">Scale.</span>
             </motion.div>
-            <div className="mt-3 inline-flex items-center gap-1.5 bg-primary-foreground/15 border border-primary-foreground/40 rounded-full px-3 py-1 font-mono-tech text-[9px] md:text-[10px] uppercase tracking-widest">
+            <div className="mt-2 inline-flex items-center gap-1.5 bg-primary-foreground/15 border border-primary-foreground/40 rounded-full px-3 py-1 font-mono-tech text-[9px] md:text-[10px] uppercase tracking-widest">
               <span className="size-1.5 rounded-full bg-primary-foreground animate-pulse-glow" />
               AI · Full-Stack · Cloud
             </div>
@@ -569,24 +569,22 @@ function Hero() {
           </div>
         </motion.div>
 
-
-
         {/* stat cards */}
-        <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
+        <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-4 md:p-5 flex flex-col justify-between min-h-[120px] md:min-h-[130px]">
           <span className="font-mono-tech text-[10px] uppercase">Features shipped</span>
-          <div className="font-display font-black text-5xl md:text-6xl leading-none">15<span className="text-primary">+</span></div>
+          <div className="font-display font-black text-4xl md:text-5xl leading-none">15<span className="text-primary">+</span></div>
           <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">full-stack @ TrueVows</span>
         </div>
 
-        <div className="col-span-6 md:col-span-2 bg-sky sticker rounded-4xl p-5 flex flex-col justify-between min-h-[140px]">
+        <div className="col-span-6 md:col-span-2 bg-sky sticker rounded-4xl p-4 md:p-5 flex flex-col justify-between min-h-[120px] md:min-h-[130px]">
           <span className="font-mono-tech text-[10px] uppercase">Certs</span>
-          <div className="font-display font-black text-5xl md:text-6xl leading-none">14<span className="text-primary">+</span></div>
+          <div className="font-display font-black text-4xl md:text-5xl leading-none">14<span className="text-primary">+</span></div>
           <span className="font-mono-tech text-[10px] uppercase text-muted-foreground">Oracle · Google · Cisco</span>
         </div>
 
-        <div className="col-span-12 md:col-span-4 bg-card sticker rounded-4xl p-5 flex flex-col justify-between">
-          <span className="font-mono-tech text-[10px] uppercase mb-2">Currently</span>
-          <p className="font-display italic text-xl md:text-2xl leading-tight">
+        <div className="col-span-12 md:col-span-4 bg-card sticker rounded-4xl p-4 md:p-5 flex flex-col justify-between">
+          <span className="font-mono-tech text-[10px] uppercase mb-1">Currently</span>
+          <p className="font-display italic text-lg md:text-xl leading-tight">
             Building <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">CortexAI</span> —
             8+ LangGraph agents, 6+ microservices, 1K+ concurrent users at 99.9% uptime.
           </p>
@@ -594,11 +592,11 @@ function Hero() {
 
         <a
           href="#work"
-          className="col-span-12 md:col-span-4 bg-ink text-cream sticker rounded-4xl p-5 flex items-center justify-between group hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="col-span-12 md:col-span-4 bg-ink text-cream sticker rounded-4xl p-4 md:p-5 flex items-center justify-between group hover:bg-primary hover:text-primary-foreground transition-colors"
           data-cursor
         >
-          <span className="font-display italic text-2xl md:text-4xl">See the work</span>
-          <span className="size-12 rounded-full bg-primary text-primary-foreground grid place-items-center text-2xl group-hover:bg-cream group-hover:text-ink transition-all group-hover:rotate-45">↓</span>
+          <span className="font-display italic text-xl md:text-3xl">See the work</span>
+          <span className="size-10 rounded-full bg-primary text-primary-foreground grid place-items-center text-xl group-hover:bg-cream group-hover:text-ink transition-all group-hover:rotate-45">↓</span>
         </a>
       </motion.div>
     </section>
