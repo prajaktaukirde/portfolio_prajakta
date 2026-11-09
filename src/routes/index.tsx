@@ -10,15 +10,16 @@ export const Route = createFileRoute("/")({
 
 const ROLES = [
   "Full Stack Developer",
-  "MERN Stack Developer",
+  "Backend & Systems Engineer",
   "AI / LLM Engineer",
   "Cloud & Data Enthusiast",
   "Cybersecurity Minor",
-  "Gen-AI Explorer",
+  "Competitive Programmer (LeetCode 1753)",
+  "Go & Distributed Systems",
 ];
 
 const SKILLS = {
-  Languages: ["Java", "C++", "JavaScript", "TypeScript", "Python", "SQL"],
+  Languages: ["Java", "C++", "Python", "Go (Golang)", "JavaScript", "TypeScript", "SQL", "Bash/Shell"],
   "Frontend / Web": ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design", "Vite", "Streamlit"],
   "Backend / APIs": [
     "Node.js",
@@ -28,6 +29,9 @@ const SKILLS = {
     "Microservices",
     "JWT & OAuth",
     "WebSockets",
+    "FastAPI",
+    "Pytest",
+    "Postman",
   ],
   "AI / LLMs / GenAI": [
     "LangChain",
@@ -44,10 +48,22 @@ const SKILLS = {
     "MLOps",
     "Responsible AI",
   ],
-  Databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Qdrant"],
+  "Databases & Caching": ["PostgreSQL", "MongoDB", "MySQL", "Redis (In-Memory)", "Qdrant Vector DB"],
+  "Systems & Security": [
+    "Distributed Systems",
+    "libpcap / gopacket",
+    "Network Packet Dissection",
+    "TCP/IP & Zeek Telemetry",
+    "Zero Trust Concepts",
+    "Docker Sandboxing & Cgroups",
+    "Linux Internals",
+    "Wireshark",
+  ],
   "Cloud / DevOps": [
-    "AWS (S3, EC2)",
-    "Google Cloud",
+    "AWS (Lambda, S3, DynamoDB, EC2)",
+    "Kubernetes (GKE)",
+    "Terraform (IaC)",
+    "Google Cloud (GKE, Pub/Sub)",
     "Oracle Cloud",
     "Docker",
     "Docker Compose",
@@ -106,73 +122,73 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
-    name: "CortexAI",
-    tag: "Multi-Agent AI Platform · MERN + LangGraph",
+    name: "PULSE",
+    tag: "Wire-Speed Packet Engine · Go + WebSockets",
+    accent: "mint",
+    when: "Aug 2026",
+    stack: ["Go (Golang)", "libpcap", "gopacket", "TCP/IP", "WebSockets", "Docker", "Render"],
+    desc:
+      "High-throughput real-time network packet inspection and telemetry engine built in Go. Interfaces with libpcap/gopacket to capture and dissect live TCP, UDP, and ICMP frame headers at wire speed without dropping frames. Streams live Zeek conn.log NDJSON feeds over full-duplex WebSockets with memory-bounded ring buffers to prevent memory leaks under traffic surges.",
+    stats: [
+      { k: "60+ FPS", v: "packet flow" },
+      { k: "0", v: "dropped frames" },
+      { k: "<30ms", v: "live sync" },
+    ],
+    link: "https://github.com/prajaktaukirde/PULSE",
+  },
+  {
+    name: "Helix AI",
+    tag: "Multi-Agent AI Platform · LangGraph + RAG",
     accent: "primary",
     when: "Apr 2026 — Present",
-    stack: ["MERN", "LangGraph", "LangChain", "Qdrant", "Docker", "AWS", "Redis", "Firebase Auth"],
+    stack: ["LangGraph", "LangChain", "Qdrant", "Python", "FastAPI", "Docker", "Redis"],
     desc:
-      "MERN microservices AI platform — 6+ microservices on Docker, AWS, API Gateway, MongoDB, Redis & Firebase Auth supporting 1,000+ concurrent users at 99.9% uptime. Orchestrates 8+ AI agents via LangGraph, LangChain, RAG and Qdrant Vector DB across 6 workflows (chat, code-gen, web search, vision, PDF & PPT generation), boosting retrieval accuracy by 45%. Integrated AWS S3, Razorpay and Monaco Editor for secure payments, artifact storage, live code editing and a credit-based AI usage system.",
+      "Fault-tolerant multi-agent supervisor architecture using LangGraph StateGraph patterns, dynamically routing user intents across 8 specialized AI agents with fallback graphs to ensure 99.9% uptime. Integrated an Ephemeral PDF RAG pipeline with Gemini embeddings and Qdrant Vector DB, boosting context retrieval precision by 45% and eliminating hallucinations across 500+ test scenarios.",
     stats: [
-      { k: "1K+", v: "concurrent users" },
-      { k: "8+", v: "AI agents" },
+      { k: "8", v: "AI agents" },
+      { k: "+45%", v: "context precision" },
       { k: "99.9%", v: "uptime" },
     ],
-    link: "https://github.com/prajaktaukirde/cortex-ai",
+    link: "https://github.com/prajaktaukirde/Helix_AI",
   },
   {
-    name: "Booking Platform REST API",
-    tag: "NestJS · PostgreSQL · Production API",
-    accent: "mint",
-    when: "Jun 2026 — Present",
-    stack: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Docker", "Swagger", "Jest"],
-    desc:
-      "Production-ready REST API with NestJS, PostgreSQL, TypeORM, JWT and refresh-token rotation — 10+ secure, role-based endpoints handling 500+ requests/day. Cut invalid bookings by 60% by enforcing 8+ business rules across duplicate prevention, status transitions, input validation, pagination and centralized exception handling. Automated testing & deployment with Swagger, Docker, migrations and Jest — 85%+ test coverage and 50% faster setup.",
-    stats: [
-      { k: "-60%", v: "invalid bookings" },
-      { k: "85%+", v: "test coverage" },
-      { k: "500+", v: "requests/day" },
-    ],
-    link: "https://github.com/prajaktaukirde/Booking-Platform-RESTAPI",
-  },
-  {
-    name: "AgriNLP · sFET",
-    tag: "Fuzzy Evolutionary Transformer · Agri Advisory",
+    name: "CodexLive",
+    tag: "Real-Time Code Execution · React 19 + Docker",
     accent: "peach",
-    when: "2025",
-    stack: ["React", "Python", "Transformers", "Fuzzy Logic", "RAG", "Vercel"],
+    when: "Oct 2026",
+    stack: ["React 19", "Monaco", "Docker", "Node.js", "Express", "Stream SDK", "MongoDB", "Redis"],
     desc:
-      "Multilingual (English–Marathi) web app for smart agri advisory. Integrates fuzzy logic + evolutionary algorithms + transformers with a RAG knowledge base of 20+ ICAR/FAO guidelines. Voice & image input, analytics dashboard, explainable AI.",
+      "Distributed pair-programming and real-time code execution platform integrating the Piston Code Execution API to execute and validate Java, Python, and C++ code inside isolated Docker cgroup sandboxes in sub-second turnaround time. Integrated Stream Video/Chat SDKs for live multi-user collaboration secured via Clerk authentication and Redis caching.",
     stats: [
-      { k: "91%+", v: "accuracy" },
-      { k: "+22%", v: "clarity" },
-      { k: "-80%", v: "cost" },
+      { k: "Sub-sec", v: "code execution" },
+      { k: "3+", v: "languages" },
+      { k: "-40%", v: "client latency" },
     ],
-    link: "https://github.com/prajaktaukirde/AgriNLP",
+    link: "https://github.com/prajaktaukirde/codexlive",
   },
   {
-    name: "100 Apps, One Agent",
-    tag: "API Buildability · Case Study",
-    accent: "mint",
-    when: "2026",
-    stack: ["React", "TanStack Start", "Tailwind v4", "Python", "Gemini"],
+    name: "SignSafe AI",
+    tag: "Edge Computer Vision · AWS Serverless",
+    accent: "sky",
+    when: "Jul 2026 — Present",
+    stack: ["Python", "MediaPipe", "AWS Lambda", "Golang", "WebSockets", "Deep Learning", "DynamoDB"],
     desc:
-      "Automated research pipeline auditing 100 SaaS APIs for AI-agent buildability. Fan-out research agents extract schemas + evidence; adversarial judge loop verifies claims. Served as an interactive matrix + live runner.",
+      "Real-time computer vision and multimodal edge ML platform utilizing Google MediaPipe for 21-point 3D hand tracking at 60 FPS and an MLP neural network classifying 122+ gestures with 98.85% accuracy. Deployed on AWS serverless with audio FFT acoustic decibel analysis to trigger automated sub-second emergency distress dispatch over WebSockets.",
     stats: [
-      { k: "100", v: "apps" },
-      { k: "10", v: "agents" },
-      { k: "100%", v: "verified" },
+      { k: "98.85%", v: "accuracy" },
+      { k: "60 FPS", v: "tracking" },
+      { k: "<30ms", v: "dispatch" },
     ],
-    link: "https://github.com/prajaktaukirde/app-discover-guild",
+    link: "https://github.com/prajaktaukirde/sign-safe",
   },
   {
     name: "AI Detection Hub",
     tag: "Flask · scikit-learn · 3-in-1 ML",
-    accent: "sky",
+    accent: "lemon",
     when: "2025",
     stack: ["Python", "Flask", "scikit-learn", "TF-IDF", "Random Forest"],
     desc:
-      "A Flask app with three ML detection systems — Email Spam, Fake News & Phishing URLs — powered by Logistic Regression + TF-IDF and a Random Forest URL classifier.",
+      "A Flask web application with three ML detection systems — Email Spam, Fake News and Phishing URLs — powered by Logistic Regression + TF-IDF and a Random Forest URL classifier with real-time confidence distributions.",
     stats: [
       { k: "97%", v: "spam acc." },
       { k: "98.6%", v: "news acc." },
@@ -181,19 +197,19 @@ const PROJECTS = [
     link: "https://github.com/prajaktaukirde/AI-Detection",
   },
   {
-    name: "Weather Dashboard",
-    tag: "Power BI · Data Storytelling",
+    name: "Booking Platform REST API",
+    tag: "NestJS · PostgreSQL · Production API",
     accent: "lavender",
-    when: "2024",
-    stack: ["Power BI", "DAX", "Data Modeling"],
+    when: "Jun 2026 — Present",
+    stack: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "JWT", "Docker", "Swagger", "Jest"],
     desc:
-      "Interactive weather dashboard visualising real-time and historical data. DAX measures surface trends in temperature and rainfall — designed for clarity and user-friendly storytelling.",
+      "Production-ready REST API with NestJS, PostgreSQL, TypeORM, JWT and refresh-token rotation — 10+ secure, role-based endpoints handling 500+ requests/day. Cut invalid bookings by 60% by enforcing 8+ business rules across duplicate prevention, status transitions, input validation, and centralized exception handling.",
     stats: [
-      { k: "DAX", v: "measures" },
-      { k: "Realtime", v: "data" },
-      { k: "UX-first", v: "visuals" },
+      { k: "-60%", v: "invalid bookings" },
+      { k: "85%+", v: "test coverage" },
+      { k: "500+", v: "requests/day" },
     ],
-    link: "https://github.com/prajaktaukirde/Weather-Dashboard",
+    link: "https://github.com/prajaktaukirde/Booking-Platform-RESTAPI",
   },
 ];
 
@@ -268,22 +284,32 @@ const CERTS = [
 
 const ACHIEVEMENTS = [
   {
+    icon: "⚡",
+    title: "Competitive Programming · LeetCode (Rating 1753)",
+    desc: "Achieved a LeetCode Contest Rating of 1753 (Top 10.43% globally), solving 350+ problems across Dynamic Programming, Graphs, Trees, and Algorithmic Optimization in C++, Java, and Python.",
+  },
+  {
+    icon: "☁️",
+    title: "Google Cloud (GCP) Arcade Facilitator · Top 10 Nationally",
+    desc: "Ranked in the Top 10 nationally in Google Cloud Arcade, earning 20+ skill badges spanning Google Kubernetes Engine (GKE), Cloud Architecture, IAM, and DevOps pipelines.",
+  },
+  {
+    icon: "🧑‍🏫",
+    title: "Technical Teaching Assistant · Apna College",
+    desc: "Mentored 500+ students in C++, Java, Object-Oriented Design, and DSA, resolving 300+ debugging queries and lifting project completion rates by 30%.",
+  },
+  {
     icon: "🏆",
     title: "Top 10 Performer · GDSC",
     desc: "Ranked in the top 10 among 200+ members of the Google Developer Student Club for technical contributions and delivering 5+ community-led projects.",
   },
-  {
-    icon: "🧑‍🏫",
-    title: "MERN Stack Teaching Assistant · Apna College",
-    desc: "Mentored 500+ students in MERN Stack and DSA, resolved 300+ debugging queries and lifted project completion rates by 30%.",
-  },
 ];
 
 const MARQUEE = [
-  "TypeScript", "React.js", "Next.js", "Node.js", "NestJS", "MongoDB",
-  "PostgreSQL", "Redis", "LangChain", "LangGraph", "RAG", "Qdrant",
-  "Vertex AI", "Gemini API", "Transformers", "AWS", "Docker", "CI/CD",
-  "Python", "Java", "Power BI", "Snowflake",
+  "Go (Golang)", "Python", "Java", "C++", "TypeScript", "React.js", "Next.js",
+  "FastAPI", "Node.js", "Docker", "Kubernetes (GKE)", "LangGraph", "LangChain",
+  "Qdrant Vector DB", "libpcap", "LeetCode 1753", "PostgreSQL", "Redis", "AWS Lambda",
+  "Google Cloud", "CI/CD",
 ];
 
 /* ---------- utilities ---------- */
@@ -427,7 +453,7 @@ function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const magnet = useMagnetic(30);
+
   const reveal = { initial: { y: "110%" }, animate: { y: 0 } };
   const typed = useTypewriter(ROLES);
 
@@ -440,7 +466,7 @@ function Hero() {
 
       <motion.div style={{ y, opacity }} className="max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-5">
         {/* NAME */}
-        <div className="col-span-12 md:col-span-8 bg-card sticker rounded-4xl p-5 md:p-8 pb-16 md:pb-20 relative overflow-hidden">
+        <div className="col-span-12 bg-card sticker rounded-4xl p-6 md:p-10 pb-16 md:pb-20 relative overflow-hidden">
           <div className="flex justify-between items-start mb-4 gap-2 flex-wrap">
             <span className="font-mono-tech text-[10px] md:text-[11px] uppercase tracking-widest text-muted-foreground">
               (portfolio · vol_01) — 2026
@@ -498,7 +524,8 @@ function Hero() {
               See my work →
             </a>
             <a
-              href="mailto:prajaktaukirde576@gmail.com"
+              href="https://leetcode.com/u/u_prajaktaa/" target="_blank" rel="noreferrer" data-cursor className="bg-lemon text-ink sticker rounded-full px-4 py-2 font-mono-tech text-[10px] md:text-[11px] uppercase tracking-wider hover:bg-primary hover:text-cream transition-colors">⚡ LeetCode (1753)</a>
+            <a href="mailto:prajaktaukirde576@gmail.com"
               data-cursor
               className="bg-card sticker rounded-full px-4 py-2 font-mono-tech text-[10px] md:text-[11px] uppercase tracking-wider hover:bg-lemon transition-colors"
             >
@@ -518,57 +545,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* PORTRAIT / MONOGRAM */}
-        <motion.div
-          ref={magnet.ref}
-          style={{ x: magnet.x, y: magnet.y }}
-          className="col-span-12 md:col-span-4 bg-primary sticker rounded-4xl p-5 md:p-8 relative overflow-hidden min-h-[260px] md:min-h-0 flex flex-col justify-between text-primary-foreground"
-          data-cursor
-        >
-          <div className="absolute -bottom-16 -right-16 size-64 rounded-full border-[1.5px] border-primary-foreground/40 animate-spin-slow" />
-          <div className="absolute -bottom-24 -right-24 size-80 rounded-full border-[1.5px] border-primary-foreground/20 animate-spin-slow" style={{ animationDirection: "reverse" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 rounded-full bg-primary-foreground/10 blur-2xl -z-0" />
-
-          <div className="flex justify-between items-start relative z-10">
-            <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">The engineer</span>
-            <span className="font-mono-tech text-[10px] uppercase tracking-widest opacity-80">'27</span>
-          </div>
-
-          {/* Big monogram + name stack */}
-          <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center py-4">
-            <motion.div
-              initial={{ scale: 0.6, opacity: 0, rotate: -8 }}
-              animate={{ scale: 1, opacity: 1, rotate: 0 }}
-              transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display italic font-black text-[22vw] md:text-[8vw] leading-[0.75] drop-shadow-[3px_3px_0_rgba(0,0,0,0.15)]"
-            >
-              P<span className="text-primary-foreground/60">U</span>
-            </motion.div>
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.7 }}
-              className="mt-2 font-display italic text-xl md:text-2xl leading-tight"
-            >
-              Build &<br/>
-              <span className="not-italic font-black tracking-tight">Scale.</span>
-            </motion.div>
-            <div className="mt-2 inline-flex items-center gap-1.5 bg-primary-foreground/15 border border-primary-foreground/40 rounded-full px-3 py-1 font-mono-tech text-[9px] md:text-[10px] uppercase tracking-widest">
-              <span className="size-1.5 rounded-full bg-primary-foreground animate-pulse-glow" />
-              AI · Full-Stack · Cloud
-            </div>
-          </div>
-
-          <div className="relative z-10">
-            <div className="font-mono-tech text-[10px] uppercase opacity-80">
-              Aurangabad · Maharashtra
-            </div>
-            <div className="font-mono-tech text-[10px] uppercase mt-1 opacity-80">
-              CS + Cybersecurity Minor
-            </div>
-          </div>
-        </motion.div>
-
         {/* stat cards */}
         <div className="col-span-6 md:col-span-2 bg-lemon sticker rounded-4xl p-4 md:p-5 flex flex-col justify-between min-h-[120px] md:min-h-[130px]">
           <span className="font-mono-tech text-[10px] uppercase">Features shipped</span>
@@ -585,8 +561,7 @@ function Hero() {
         <div className="col-span-12 md:col-span-4 bg-card sticker rounded-4xl p-4 md:p-5 flex flex-col justify-between">
           <span className="font-mono-tech text-[10px] uppercase mb-1">Currently</span>
           <p className="font-display italic text-lg md:text-xl leading-tight">
-            Building <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">CortexAI</span> —
-            8+ LangGraph agents, 6+ microservices, 1K+ concurrent users at 99.9% uptime.
+            Building <span className="not-italic bg-primary text-primary-foreground px-1.5 rounded">Helix AI & PULSE</span> — multi-agent AI supervisor graphs & wire-speed network packet visualization engines.
           </p>
         </div>
 
@@ -907,6 +882,9 @@ function Contact() {
           </Sticker>
           <Sticker rotate={3} className="bg-mint rounded-full px-6 py-3 text-xs">
             <a href="https://github.com/prajaktaukirde" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </Sticker>
+          <Sticker rotate={-1} className="bg-lemon rounded-full px-6 py-3 text-xs">
+            <a href="https://leetcode.com/u/u_prajaktaa/" target="_blank" rel="noreferrer">LeetCode ↗</a>
           </Sticker>
           <Sticker rotate={-2} className="bg-sky rounded-full px-6 py-3 text-xs">
             <a href="tel:+919112480174">+91 91124 80174</a>
